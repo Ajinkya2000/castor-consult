@@ -33,16 +33,22 @@ p.header-text {
   font-size: 1.5rem;
 }
 
+.details {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 85vh;
+}
+
 .navbar {
   height: 15vh;
   width: 100%;
   background: #24272d;
-  position: absolute;
-  bottom: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 
 .navbar-brand {
   font-size: 1.8rem;
@@ -68,9 +74,4 @@ p.header-text {
 .navlinks li.links {
   cursor: pointer;
   font-size: .9rem;
-}
-
-.details {
-  height: 100vh;
-  width: 100%;
 }

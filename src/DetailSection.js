@@ -1,11 +1,12 @@
 import React from "react";
+import Navbar from "./Navbar";
 
 const DetailSection = () => {
-  return <div>
+  return (
     <div className="details">
-
+      <Navbar />
     </div>
-  </div>;
+  );
 };
 
 export default DetailSection;

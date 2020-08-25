@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "./Navbar";
+import DetailSection from "./DetailSection";
 
 const Header = () => {
   return (
@@ -10,7 +10,7 @@ const Header = () => {
           Lorem ipsum dolor, sit amet consectetur adipisicing elit.
         </p>
       </div>
-      <Navbar />
+      <DetailSection />
     </div>
   );
 };
