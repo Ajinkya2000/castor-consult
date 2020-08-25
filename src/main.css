@@ -7,16 +7,20 @@ body {
 }
 
 .header {
-  height: 85vh;
+  height: 100vh;
   width: 100%;
-  position: fixed;
-  z-index: -1;
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url("./static/header-background.jpg");
+  background-attachment: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.header-details {
+  position: fixed;
+  text-align: center;
 }
 
 h1.brand-name {
@@ -27,7 +31,6 @@ h1.brand-name {
 
 p.header-text {
   font-size: 1.5rem;
-
 }
 
 .navbar {
@@ -35,7 +38,7 @@ p.header-text {
   width: 100%;
   background: #24272d;
   position: absolute;
-  top: 85vh;
+  bottom: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -65,4 +68,9 @@ p.header-text {
 .navlinks li.links {
   cursor: pointer;
   font-size: .9rem;
+}
+
+.details {
+  height: 100vh;
+  width: 100%;
 }

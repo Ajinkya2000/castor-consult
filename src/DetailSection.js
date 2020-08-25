@@ -1,9 +1,10 @@
 import React from "react";
-import Navbar from "./Navbar";
 
 const DetailSection = () => {
   return <div>
-    <Navbar />
+    <div className="details">
+
+    </div>
   </div>;
 };
 
