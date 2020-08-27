@@ -3,11 +3,17 @@ body {
   padding: 0;
   box-sizing: border-box;
   color: #fff;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
+}
+
+.header-wrapper {
+  position: relative;
+  height: 85vh;
+  width: 100%;
 }
 
 .header {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url("./static/header-background.jpg");
@@ -16,28 +22,41 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: absolute;
+  z-index: -1;
 }
 
 .header-details {
   position: fixed;
   text-align: center;
+  transform: translateY(50px);
+  opacity: 0;
+  animation: moveInTop 1s ease forwards;
+}
+
+@keyframes moveInTop {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 h1.brand-name {
   font-size: 3.5rem;
   margin: 0;
   letter-spacing: 5px;
+  margin-bottom: 25px;
 }
 
 p.header-text {
   font-size: 1.5rem;
-}
-
-.details {
-  height: 100vh;
-  width: 100%;
-  position: absolute;
-  top: 85vh;
+  width: 90%;
+  margin: auto;
+  line-height: 1.5;
 }
 
 .navbar {
@@ -47,8 +66,10 @@ p.header-text {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
-
 
 .navbar-brand {
   font-size: 1.8rem;
@@ -73,5 +94,417 @@ p.header-text {
 
 .navlinks li.links {
   cursor: pointer;
-  font-size: .9rem;
+  font-size: 0.9rem;
+}
+
+.hamburger {
+  width: 30px;
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  align-items: center;
+  flex-direction: column;
+  display: none;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 4px;
+  background: white;
+}
+
+.details {
+  height: 100vh;
+  width: 100%;
+  color: black;
+  font-family: "Raleway";
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.detail-heading {
+  font-size: 3rem;
+  margin-bottom: 0;
+}
+
+.half-border {
+  width: 35%;
+  background: rgba(128, 128, 128, 0.205);
+  height: 3px;
+  margin: 3rem 0;
+}
+
+.detail-content {
+  width: 40%;
+}
+
+.detail-content p {
+  line-height: 1.8;
+  font-size: 1.25rem;
+  font-style: italic;
+}
+
+.building-image {
+  width: 40%;
+}
+
+.building-image-top {
+  display: none;
+}
+
+.project {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Raleway";
+  margin-top: 5rem;
+}
+
+.project h2 {
+  text-transform: uppercase;
+  font-size: 3rem;
+  width: 10%;
+  color: #000;
+  margin-left: 5%;
+}
+
+.project p {
+  width: 50%;
+  font-size: 1.4rem;
+  color: #7a6262;
+  line-height: 1.5;
+  padding: 20px 30px;
+  border-left: 3px solid rgba(128, 128, 128, 0.247);
+  font-style: italic;
+  margin-right: 10%;
+}
+
+.services {
+  height: 250vh;
+  width: 100%;
+}
+
+.service-card {
+  height: 20%;
+  width: 100%;
+  position: relative;
+}
+
+.service-card h2 {
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.service-card.image1 {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)),
+    url("./static/architecture.jpg") no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.service-card.image2 {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)),
+    url("./static/engineering.jpg") no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.service-card.image3 {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)),
+    url("./static/project-management.jpg") no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.service-card.image4 {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)),
+    url("./static/consultancy.jpg") no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.service-card.image5 {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)),
+    url("./static/infrastructure.jpg") no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.card-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.cards {
+  width: 100%;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.card {
+  width: 350px;
+  height: 250px;
+  transform-style: preserve-3d;
+  transition: all 1s ease;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  justify-self: center;
+}
+
+.card img {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+
+.card div {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: 2s ease-in-out;
+}
+
+.card .front {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.card .back {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #24272d;
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  backface-visibility: hidden;
+  transform: perspective(500px) rotateY(180deg);
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+}
+
+.description,
+.fas {
+  transform: translateZ(50px);
+}
+
+.hide {
+  display: none;
+}
+
+/* FOOTER */
+.footer .contain {
+  display: flex;
+  padding: 3% 10%;
+  color: gray;
+  font-size: 1.5rem;
+  background-color: #24272d;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fab {
+  transition-duration: 0.5s;
+}
+
+.fab:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.icons {
+  font-size: 2rem;
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
+}
+
+/* FOOTER2 */
+.footer2 .contain {
+  padding: 2% 10%;
+  color: #5a5d62;
+  background-color: #2b2e35;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact span {
+  cursor: pointer;
+}
+
+.footer2 div {
+  color: white;
+}
+
+.footer2 a {
+  color: white;
+  transition-duration: 0.5s;
+}
+
+.footer-wrapper {
+  color: #000;
+}
+
+.btn {
+  background-color: #2b2e35;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+@media (max-width: 1315px) {
+  .detail-heading {
+    font-size: 2.75rem;
+  }
+}
+
+@media (max-width: 1155px) {
+  .project p {
+    margin-right: 2%;
+  }
+}
+
+@media (max-width: 930px) {
+  h1.brand-name {
+    font-size: 3rem;
+    margin: 0;
+    margin-bottom: 25px;
+  }
+  p.header-text {
+    font-size: 1.25rem;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .navlinks {
+    display: none;
+  }
+  .navbar {
+    justify-content: space-around;
+  }
+  .navbar-brand {
+    transform: translateX(0);
+    font-size: 1.25rem;
+  }
+  .project {
+    display: block;
+  }
+  .project h2 {
+    margin: 5%;
+  }
+  .project p {
+    width: 90%;
+    padding: 0;
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .details {
+    display: block;
+    margin-top: 5rem;
+    height: auto;
+  }
+  .detail-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .detail-heading {
+    font-size: 2.5rem;
+  }
+  .detail-content p {
+    font-size: 1.1rem;
+    width: 70%;
+    margin-top: 5rem;
+  }
+  .building-image {
+    display: none;
+  }
+  .building-image-top {
+    display: block;
+    width: 50%;
+  }
+}
+
+@media (max-width: 770px) {
+  h1.brand-name {
+    font-size: 2.5rem;
+    margin: auto;
+    margin-bottom: 25px;
+  }
+  p.header-text {
+    font-size: 1.15rem;
+  }
+  .detail-heading {
+    font-size: 2rem;
+  }
+  .building-image-top {
+    width: 70%;
+  }
+  .detail-content p {
+    width: 90%;
+    margin-bottom: 5rem;
+  }
+  .card {
+    width: 300px;
+    height: 225px;
+  }
+  .btn {
+    font-size: .8rem;
+    padding: 0.5rem;
+    width: 40%;
+  }
+  .icons {
+    font-size: 1.2rem;
+  }
+  .footer2 .contain {
+    flex-direction: column;
+  }
+  .contact {
+    width: 90%;
+  }
+}
+
+@media (max-width: 620px) {
+  h1.brand-name {
+    font-size: 2rem;
+    margin: auto;
+    margin-bottom: 25px;
+  }
+
+  p.header-text {
+    font-size: 1rem;
+    width: 95%;
+  }
+
+  .project h2 {
+    font-size: 2.5rem;
+  }
+
+  .project p {
+    line-height: 1.8;
+  }
 }
